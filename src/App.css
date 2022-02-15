@@ -1,0 +1,101 @@
+.App {
+  width: 600px;
+  margin: 10px auto;
+  font-size: 12px;
+}
+.ffe-accordion {
+  width: 100%;
+  border: 1px solid transparent;
+}
+.ffe-accordion--focus {
+  border-color: #005aa4;
+}
+@media (prefers-color-scheme: dark) {
+  .native .ffe-accordion--focus {
+    border-color: #4d8cbf;
+  }
+}
+.ffe-accordion__heading-icon {
+  flex: 0 0 auto;
+  fill: #005aa4;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s cubic-bezier(0.46, -0.265, 0.48, 1.38);
+}
+@media (prefers-color-scheme: dark) {
+  .native .ffe-accordion__heading-icon {
+    fill: #4d8cbf;
+  }
+}
+.ffe-accordion__heading-button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  color: #005aa4;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.ffe-accordion__heading-button--open,
+.ffe-accordion__heading-button:hover,
+.ffe-accordion__heading-button:focus {
+  color: #002776;
+}
+.ffe-accordion__heading-button--open .ffe-accordion__heading-icon,
+.ffe-accordion__heading-button:hover .ffe-accordion__heading-icon,
+.ffe-accordion__heading-button:focus .ffe-accordion__heading-icon {
+  fill: #002776;
+}
+@media (prefers-color-scheme: dark) {
+  .native .ffe-accordion__heading-button {
+    color: #4d8cbf;
+  }
+  .native .ffe-accordion__heading-button--open,
+  .native .ffe-accordion__heading-button:hover,
+  .native .ffe-accordion__heading-button:focus {
+    color: #b3cee4;
+  }
+  .native .ffe-accordion__heading-button--open .ffe-accordion__heading-icon,
+  .native .ffe-accordion__heading-button:hover .ffe-accordion__heading-icon,
+  .native .ffe-accordion__heading-button:focus .ffe-accordion__heading-icon {
+    fill: #b3cee4;
+  }
+}
+.ffe-accordion__heading-button--open .ffe-accordion__heading-icon {
+  transform: rotateZ(180deg);
+}
+.ffe-accordion__heading-button:focus .ffe-accordion__heading-button-content {
+  border-color: #005aa4;
+}
+@media (prefers-color-scheme: dark) {
+  .native .ffe-accordion__heading-button:focus .ffe-accordion__heading-button-content {
+    border-color: #4d8cbf;
+  }
+}
+.ffe-accordion__heading-button-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 4px;
+}
+.ffe-accordion-body {
+  padding: 8px 24px 24px;
+}
+.ffe-accordion-item {
+  border-top: solid #adadad 1px;
+}
+.ffe-accordion-item:last-of-type {
+  border-bottom: solid #adadad 1px;
+}
+.ffe-accordion-item .ffe-h6 {
+  margin: 0;
+}
+.ffe-collapse-transition {
+  transition: height 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+/*# sourceMappingURL=App.css.map */

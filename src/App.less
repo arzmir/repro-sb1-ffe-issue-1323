@@ -1,0 +1,135 @@
+.App {
+    width: 600px;
+    margin: 10px auto;
+    font-size: 12px;
+}  
+
+
+// Transition
+@ffe-transition-duration: 0.2s;
+@ffe-ease-in-out-back: cubic-bezier(0.46,-0.265,0.48,1.38);
+@ffe-ease: cubic-bezier(0.25,0.1,0.25,1);
+
+// Colors
+@ffe-farge-fjell: #002776;
+@ffe-farge-vann-30-hover: #e1ebf4;
+@ffe-farge-vann-30: #b3cee4;
+@ffe-farge-vann-70: #4d8cbf;
+@ffe-farge-vann: #005aa4;
+@ffe-farge-graa: #adadad;
+
+// Spacings
+@ffe-spacing-2xs: 4px;
+@ffe-spacing-md: 24px;
+@ffe-spacing-sm: 16px;
+@ffe-spacing-xs: 8px;
+
+// accordion.less
+.ffe-accordion {
+    width: 100%;
+    border: 1px solid transparent;
+    &--focus {
+        border-color: @ffe-farge-vann;
+
+        .native & {
+            @media (prefers-color-scheme: dark) {
+                border-color: @ffe-farge-vann-70;
+            }
+        }
+    }
+}
+
+.ffe-accordion__heading-icon {
+    flex: 0 0 auto;
+    fill: @ffe-farge-vann;
+    width: @ffe-spacing-sm;
+    height: @ffe-spacing-sm;
+    transition: transform @ffe-transition-duration @ffe-ease-in-out-back;
+    .native & {
+        @media (prefers-color-scheme: dark) {
+            fill: @ffe-farge-vann-70;
+        }
+    }
+}
+
+.ffe-accordion__heading-button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: @ffe-spacing-md;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    color: @ffe-farge-vann;
+    transition: all @ffe-transition-duration @ffe-ease;
+
+    &--open,
+    &:hover,
+    &:focus {
+        color: @ffe-farge-fjell;
+        .ffe-accordion__heading-icon {
+            fill: @ffe-farge-fjell;
+        }
+    }
+
+    .native & {
+        @media (prefers-color-scheme: dark) {
+            color: @ffe-farge-vann-70;
+
+            &--open,
+            &:hover,
+            &:focus {
+                color: @ffe-farge-vann-30;
+                .ffe-accordion__heading-icon {
+                    fill: @ffe-farge-vann-30;
+                }
+            }
+        }
+    }
+
+    &--open {
+        .ffe-accordion__heading-icon {
+            transform: rotateZ(180deg);
+        }
+    }
+    &:focus {
+        .ffe-accordion__heading-button-content {
+            border-color: @ffe-farge-vann;
+
+            .native & {
+                @media (prefers-color-scheme: dark) {
+                    border-color: @ffe-farge-vann-70;
+                }
+            }
+        }
+    }
+}
+
+.ffe-accordion__heading-button-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: @ffe-spacing-2xs;
+}
+
+.ffe-accordion-body {
+    padding: @ffe-spacing-xs @ffe-spacing-md @ffe-spacing-md;
+}
+
+.ffe-accordion-item {
+    border-top: solid @ffe-farge-graa 1px;
+    &:last-of-type {
+        border-bottom: solid @ffe-farge-graa 1px;
+    }
+    .ffe-h6 {
+        margin: 0;
+    }
+}
+
+// collapse.less
+.ffe-collapse-transition {
+    transition: height @ffe-transition-duration @ffe-ease;
+}
